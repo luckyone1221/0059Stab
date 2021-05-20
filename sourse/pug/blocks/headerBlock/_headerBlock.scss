@@ -207,6 +207,8 @@
 }
 
 .hb-sliders{
+	position: relative;
+	z-index: 3;
 	@include media-breakpoint-up(xl){
 		transform: rotate(45deg) translateX(-350px) translateY(-370px);
 		position: fixed;
