@@ -1,2 +1,37 @@
 mixin footer()
-	footer.footer
+  +b.FOOTER.footer#footer
+    .container
+      +e.row.row.align-items-end
+        .col-xl-5.col-xxl-6.d-none.d-xl-block
+          +e.contacts-row.row.align-items-center
+            .col-auto
+              +b.telegram-ball(href="")
+                img(loading="lazy" src="img/svg/telegram.svg" alt="")
+            .col-auto
+              +b.tell-link(href='tel:88006007047') 8 (800) 600-70-47
+            .col-auto
+              +b.mail-link(href='mailto:info@workes.ru') info@workes.ru
+        .col-xl-7.col-xxl-6
+          +e.digits-row.row.text-center.text-xl-start.counter-wrap-js#digits-row(class="wow animate__fadeIn")
+            +footerDigitsItem('>', '180', 'd-col-1')
+              | Проектов реализовано
+              br
+              | нашей командой
+            +footerDigitsItem(false, '12', 'd-col-2')
+              | человек в нашей
+              br
+              | команде
+            +footerDigitsItem('>', '7', 'd-col-3')
+              | Лет опыт работы
+              br
+              | в digital
+
+mixin footerDigitsItem(addNumbSymbol='>', number, addClasses)
+  +e.d-col.col-4(class=addClasses)
+    +e.item
+      +e.number
+        if addNumbSymbol
+          span=`${addNumbSymbol}`
+        span.counter-js=number
+      +e.descr
+        block

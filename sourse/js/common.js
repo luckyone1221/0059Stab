@@ -268,7 +268,7 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = document.body.dataset.bg;
+	screenName = document.body.dataset.bg || '01-576.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -331,6 +331,77 @@ function eventHandler() {
 
 	});
 	// modal window
+
+	//luckyone js
+	let sHeaderBlockSlider = {
+		slidesPerView: 'auto',
+		freeModeMomentum: true,
+		spaceBetween: 20,
+
+		loop: true,
+		observer: true,
+		observeParents: true,
+
+		autoplay: {
+			delay: 0,
+			disableOnInteraction: false,
+		},
+	};
+	let sHeaderBlockSlider1 = new Swiper('.headerBlock-slider1-js', {
+		...sHeaderBlockSlider,
+		speed: 10000,
+	});
+	let sHeaderBlockSlider2 = new Swiper('.headerBlock-slider2-js', {
+		...sHeaderBlockSlider,
+		speed: 5000,
+	});
+
+	function counters() {
+		var countbox = $('.counter-wrap-js');
+		var show = true;
+		if (!countbox.length && !show) return;
+		$('.counter-js').css('opacity', '1');
+		$('.counter-js').spincrement({
+			thousandSeparator: "",
+			duration: 3000
+		});
+		show = false;
+	}
+	//counters();
+	//?
+	window.onload = function () {
+		document.body.classList.remove("loaded_hiding");
+		var wow = new WOW({
+			// mobile: false,
+			animateClass: 'animate__animated',
+			callback: function (box) {
+				if (box.id === 'digits-row') {
+					setTimeout(() => {
+						counters();
+					}, 10);
+				}
+			}
+		});
+		setTimeout(() => {
+			$('.top-nav').removeClass("opacity-0");
+			wow.init();
+		}, 1000);
+	};
+	//content switch
+	$('.content-switch-btn').click(function (){
+		$('body').addClass('loaded_hiding');
+		window.setTimeout(function (){
+			$('.main-content-js').toggleClass('active');
+			$('.form-content-js').toggleClass('active');
+			$('.content-switch-btn').toggleClass('active');
+
+			window.setTimeout(function (){
+				$('body').removeClass('loaded_hiding');
+			}, 50);
+		}, 1000);
+	});
+
+	//end luckyone js
 
 };
 if (document.readyState !== 'loading') {

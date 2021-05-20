@@ -1,10 +1,70 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
+		+e.container.container
+			+e.img
+				img(loading="lazy" src="img/svg/big-logo.svg" alt="")
+			+e.row.row.align-items-center
+				.col-xl-7.col-xxl-6.main-content-js.active
+					+b.section-title.text-center.text-xl-start
+						h1
+							| Digital-решения
+							br
+							| для бизнесов и стартапов
+							br
+							span.text-success которые работают
+						p Мы digital-компания, которая оказывает современные и сильные услуги в сферах разработки, продвижения и брендинга.
+						p Сейчас мы разрабатываем свой новый сайт. Если вы заинтересованы  в&#160;сотрудничестве — оставьте заявку и мы свяжемся с вами.
+					+e.btns-row.row.gy-3.justify-content-xl-start.justify-content-center
+						.col-auto
+							+e.btn--connect.content-switch-btn.active(type='button') Связаться с нами
+						.col-auto
+							+e.btn--presentation(href="#")
+								span.text-white
+									| Презентация в pdf,
+									|
+								span.text-secondary 3 мб
+				.col-xl-8.form-content-js.text-center.text-xl-start
+					+form-wrap
+						+e.big-title Связаться с нами
+						+e.descr Заполните форму и мы свяжемся с вами в ближайшее время.
+						+e.row.row
+							.col-md-6
+								+input('Ваше имя', 'text', undefined, 'name')
+							.col-md-6
+								+input('Ваш E-mail', 'email', undefined, 'email')
+							.col-md-6
+								+input('Введите номер телефона', 'tel', undefined, 'tel')
+							.col-md-6
+								+input('Название компании или проекта', 'text', undefined, 'project-name')
+						+e.btn-cont
+							+e.btn(type="submit") Отправить заявку
+							+e.policy
+								| Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
+								|
+								br.d-none.d-xl-block
+								| и соглашаетесь с
+								|
+								a(href='#') Политикой конфиденциальности
+		+b.hb-sliders
+			.container
+				+e.wrap
+					+e.slider
+						.swiper-container.headerBlock-slider1-js
+							.swiper-wrapper
+								-for(var i = 1; i < 9; i++)
+									+hbSlide(i)
+					+e.slider
+						.swiper-container.headerBlock-slider2-js
+							.swiper-wrapper
+								-for (var i = 9; i < 17; i++)
+									+hbSlide(i)
 
-			.row
-						
 	// end headerBlock
+
+mixin hbSlide(imgNum)
+	.swiper-slide
+		+e.link(href="#")
+			//+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")
+			+e.pic
+				img(loading="lazy" src=`img/@2x/hb-slider-${imgNum}.png` alt="")

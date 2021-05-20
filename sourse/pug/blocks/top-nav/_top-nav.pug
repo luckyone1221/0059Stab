@@ -1,30 +1,29 @@
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js.d-lg-none
 		+b.toggle-menu-mobile--js.on
 			span
 		+e.inner
-		
 			+mnu()
 			.text-right
 	//  мобильное меню
+
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
-			.row
-				.col-auto.d-lg-none
-					+b.toggle-menu-mobile--js
-						span
-				.col.d-none.d-lg-block
-					+mnu()
-					
+		+e.container.container
+			+e.row.row.gy-3
+				.col
+					+e.logo(href="#")
+						img(loading="lazy" src="img/svg/logo.svg" alt="")
+				.col-auto.d-none.d-md-block.d-base-none
+					+b.mail-link(href='mailto:info@workes.ru') info@workes.ru
+				.col-auto.d-base-none
+					+b.tell-link(href='tel:88006007047') 8 (800) 600-70-47
+				.col-auto.d-base-none
+					+b.telegram-ball(href="")
+						img(loading="lazy" src="img/svg/telegram.svg" alt="")
+				.col-auto.content-switch-btn
+					+e.switch-content
+						+icon('cross')
+					//
 	// end top-nav
