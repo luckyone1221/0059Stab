@@ -1,8 +1,11 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+e.img-xl-container.container
+			+e.img--xl.d-none.d-xl-block
+				img(loading="lazy" src="img/svg/big-logo.svg" alt="")
 		+e.container.container
-			+e.img
+			+e.img.d-xl-none
 				img(loading="lazy" src="img/svg/big-logo.svg" alt="")
 			+e.row.row.align-items-center
 				.col-xl-7.col-xxl-6.main-content-js.active
@@ -46,19 +49,19 @@ mixin headerBlock()
 								| и соглашаетесь с
 								|
 								a(href='#') Политикой конфиденциальности
-		+b.hb-sliders
-			.container
-				+e.wrap
-					+e.slider
-						.swiper-container.headerBlock-slider1-js
-							.swiper-wrapper
-								-for(var i = 1; i < 9; i++)
-									+hbSlide(i)
-					+e.slider
-						.swiper-container.headerBlock-slider2-js
-							.swiper-wrapper
-								-for (var i = 9; i < 17; i++)
-									+hbSlide(i)
+	+b.hb-sliders
+		.container
+			+e.wrap
+				+e.slider
+					.swiper-container.headerBlock-slider1-js
+						.swiper-wrapper
+							-for(var i = 1; i < 9; i++)
+								+hbSlide(i)
+				+e.slider
+					.swiper-container.headerBlock-slider2-js
+						.swiper-wrapper
+							-for (var i = 9; i < 17; i++)
+								+hbSlide(i)
 
 	// end headerBlock
 

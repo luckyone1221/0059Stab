@@ -1,4 +1,7 @@
 .top-nav {
+	position: relative;
+	z-index: 3;
+
 	padding: 36px 0;
 	@include media-breakpoint-up(md){
 		padding: 42px 0;
@@ -31,6 +34,15 @@
 	}
 
 	//
+	&__switch-col{
+		@include media-breakpoint-up(xl){
+			position: absolute;
+			z-index: 100;
+			top: 60px;
+			right: 60px;
+			padding: 0;
+		}
+	}
 	&__switch-content{
 		width: 30px;
 		height: 30px;
@@ -47,6 +59,24 @@
 		&:hover{
 			.icon{
 				color: $green2;
+			}
+		}
+
+		@include media-breakpoint-up(xl){
+			position: relative;
+			z-index: 3;
+			&:before{
+				content: '';
+				position: absolute;
+				z-index: -1;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				width: calc(100% + 30px);
+				height: calc(100% + 30px);
+				border-radius: 50%;
+				background-color: $body-bg;
+
 			}
 		}
 	}

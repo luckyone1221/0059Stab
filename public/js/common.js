@@ -130,7 +130,7 @@ function eventHandler() {
 			$('.content-switch-btn').toggleClass('active');
 			window.setTimeout(function () {
 				$('body').removeClass('loaded_hiding');
-			}, 50);
+			}, 100);
 		}, 1000);
 	}); //end luckyone js
 }

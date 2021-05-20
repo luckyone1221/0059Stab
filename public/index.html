@@ -5,8 +5,38 @@
 		<title>title</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="preconnect" href="https://fonts.gstatic.com">
+		<meta content="width=570,  maximum-scale=1 , user-scalable=no" name="viewport">
+		<script>
+			let viewport = document.querySelector("meta[name=viewport]");
+			if (window.innerWidth > 570) viewport.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+		</script>
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no">
+		<style>
+			body::after {
+				content: '';
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 2000;
+				height: 100%;
+				background-color: #FDFBF9;
+			
+					background-image: url("data:image/svg+xml,%3Csvg width='640' height='392' viewBox='0 0 640 392' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M490.262 391.999H414.866C400.993 391.999 390.564 384.536 386.162 371.428L342.915 247.619H298.042L254.794 371.428C250.393 384.44 239.964 391.999 226.091 391.999H150.504C136.63 391.999 126.201 384.536 121.8 371.523L77.5004 247.619H46.6916C36.1668 247.619 26.6946 241.208 22.9631 231.544L7.27164 193.177C4.11422 185.235 5.16669 176.242 9.95067 169.161C14.7346 162.177 22.5804 157.967 31.0002 157.967H45.6391L2.00927 35.7841C0.191358 31.8613 0 27.9384 0 25.2594C0 21.3365 0.956796 17.2223 2.77471 13.0124L3.2531 11.8643L3.92286 10.8118C6.60188 6.79325 13.0124 0.095678 26.0248 0.095678H98.8369C113.38 0.095678 124.192 8.32411 127.732 22.1976L171.745 157.967H212.408L259.1 21.5279C263.597 8.03708 274.313 0 287.804 0H352.1C365.591 0 376.307 8.03708 380.804 21.5279L427.496 157.967H468.255L512.459 21.7192C517.052 8.03707 527.481 0.191356 541.163 0.191356H613.975C622.395 0.191356 629.762 3.63582 634.355 9.75931C637.512 13.3951 638.852 17.4137 639.33 19.6143C639.809 21.3365 640 23.0588 640 24.6853C640 26.0248 640 28.2254 639.426 30.7131C639.139 32.244 638.661 33.7749 637.991 35.2101L594.457 158.063H609.861C617.994 158.063 625.744 161.985 630.528 168.492C635.312 174.998 636.747 183.609 634.355 191.359L622.108 229.918C618.568 240.538 608.713 247.619 597.71 247.619H562.691L518.678 372.193L518.391 372.767C510.737 389.511 497.438 391.999 490.262 391.999ZM413.814 363.199C414.005 363.199 414.388 363.295 414.962 363.295H490.262C490.549 363.295 490.74 363.295 490.836 363.295C491.027 363.104 491.505 362.625 492.08 361.381L542.598 219.01H595.7L605.938 186.862H554.08L610.052 28.9909H541.163C540.876 28.9909 540.685 28.9909 540.493 28.9909C540.302 29.2779 540.015 29.852 539.632 30.8088L489.113 186.862H407.021L353.631 30.9045C353.249 29.7563 352.866 29.1822 352.675 28.9909C352.579 28.9909 352.388 28.9909 352.1 28.9909H287.804C287.517 28.9909 287.325 28.9909 287.134 28.9909C286.943 29.2779 286.56 29.852 286.273 30.9045V31.0002L232.884 186.862H150.791L100.081 29.565C99.9851 29.2779 99.8894 28.9909 99.8894 28.7995C99.698 28.7995 99.3153 28.7038 98.9326 28.7038H29.9477L86.3029 186.575H35.5928L48.8922 218.723H97.7844L148.973 362.051C149.164 362.53 149.26 362.817 149.356 363.008C149.547 363.008 149.93 363.104 150.504 363.104H226.091C226.569 363.104 226.952 363.104 227.239 363.008C227.334 362.817 227.43 362.53 227.621 362.051L227.717 361.86L277.758 218.723H363.391L413.431 362.051C413.527 362.721 413.718 363.008 413.814 363.199ZM460.505 275.174H437.351L418.119 218.915H478.78L460.505 275.174ZM202.745 275.174H179.59L161.411 218.915H222.072L202.745 275.174ZM352.005 186.671H288.856L309.427 127.732H331.338L352.005 186.671Z' fill='%23EEEEEE'/%3E%3C/svg%3E%0A");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 200px;
+			}
+			body:after {
+				--s: 1s;
+				-webkit-transition: all var(--s) ease-in-out;
+				transition: all var(--s) ease-in-out;
+			}
+			body:not(.loaded_hiding):after {
+				-webkit-transform: translateY(-100%);
+				transform: translateY(-100%);
+			}
+		</style><link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link href="libs/animate.css/animate.min.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
@@ -24,15 +54,15 @@
 					<div class="top-nav__row row gy-3">
 						<div class="col"><a class="top-nav__logo" href="#"><img loading="lazy" src="img/svg/logo.svg" alt=""/></a>
 						</div>
-						<div class="col-auto d-none d-md-block d-base-none"><a class="mail-link" href="mailto:info@workes.ru">info@workes.ru</a>
+						<div class="col-auto d-none d-md-block d-xl-none"><a class="mail-link" href="mailto:info@workes.ru">info@workes.ru</a>
 						</div>
-						<div class="col-auto d-base-none"><a class="tell-link" href="tel:88006007047">8 (800) 600-70-47</a>
+						<div class="col-auto d-xl-none"><a class="tell-link" href="tel:88006007047">8 (800) 600-70-47</a>
 						</div>
-						<div class="col-auto d-base-none">
+						<div class="col-auto d-xl-none">
 							<div class="telegram-ball" href=""><img loading="lazy" src="img/svg/telegram.svg" alt=""/>
 							</div>
 						</div>
-						<div class="col-auto content-switch-btn">
+						<div class="top-nav__switch-col col-auto content-switch-btn">
 							<div class="top-nav__switch-content">
 								<svg class="icon icon-cross ">
 									<use xlink:href="img/svg/sprite.svg#cross"></use>
@@ -46,8 +76,12 @@
 			<!-- end top-nav-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
+				<div class="headerBlock__img-xl-container container">
+					<div class="headerBlock__img headerBlock__img--xl d-none d-xl-block"><img loading="lazy" src="img/svg/big-logo.svg" alt=""/>
+					</div>
+				</div>
 				<div class="headerBlock__container container">
-					<div class="headerBlock__img"><img loading="lazy" src="img/svg/big-logo.svg" alt=""/>
+					<div class="headerBlock__img d-xl-none"><img loading="lazy" src="img/svg/big-logo.svg" alt=""/>
 					</div>
 					<div class="headerBlock__row row align-items-center">
 						<div class="col-xl-7 col-xxl-6 main-content-js active">
@@ -110,66 +144,66 @@
 						</div>
 					</div>
 				</div>
-				<div class="hb-sliders">
-					<div class="container">
-						<div class="hb-sliders__wrap">
-							<div class="hb-sliders__slider">
-								<div class="swiper-container headerBlock-slider1-js">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-1.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-2.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-3.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-4.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-5.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-6.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-7.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-8.png" alt=""/></span></a>
-										</div>
+			</div>
+			<div class="hb-sliders">
+				<div class="container">
+					<div class="hb-sliders__wrap">
+						<div class="hb-sliders__slider">
+							<div class="swiper-container headerBlock-slider1-js">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-1.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-2.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-3.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-4.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-5.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-6.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-7.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-8.png" alt=""/></span></a>
 									</div>
 								</div>
 							</div>
-							<div class="hb-sliders__slider">
-								<div class="swiper-container headerBlock-slider2-js">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-9.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-10.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-11.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-12.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-13.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-14.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-15.png" alt=""/></span></a>
-										</div>
-										<div class="swiper-slide"><a class="hb-sliders__link" href="#">
-											<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-16.png" alt=""/></span></a>
-										</div>
+						</div>
+						<div class="hb-sliders__slider">
+							<div class="swiper-container headerBlock-slider2-js">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-9.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-10.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-11.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-12.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-13.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-14.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-15.png" alt=""/></span></a>
+									</div>
+									<div class="swiper-slide"><a class="hb-sliders__link" href="#">
+										<!--+pic(`hb-slider-${imgNum}`, undefined, 0)(class="hb-sliders__pic")--><span class="hb-sliders__pic"><img loading="lazy" src="img/@2x/hb-slider-16.png" alt=""/></span></a>
 									</div>
 								</div>
 							</div>

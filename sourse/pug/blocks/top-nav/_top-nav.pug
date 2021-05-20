@@ -15,14 +15,14 @@ mixin top-nav()
 				.col
 					+e.logo(href="#")
 						img(loading="lazy" src="img/svg/logo.svg" alt="")
-				.col-auto.d-none.d-md-block.d-base-none
+				.col-auto.d-none.d-md-block.d-xl-none
 					+b.mail-link(href='mailto:info@workes.ru') info@workes.ru
-				.col-auto.d-base-none
+				.col-auto.d-xl-none
 					+b.tell-link(href='tel:88006007047') 8 (800) 600-70-47
-				.col-auto.d-base-none
+				.col-auto.d-xl-none
 					+b.telegram-ball(href="")
 						img(loading="lazy" src="img/svg/telegram.svg" alt="")
-				.col-auto.content-switch-btn
+				+e.switch-col.col-auto.content-switch-btn
 					+e.switch-content
 						+icon('cross')
 					//

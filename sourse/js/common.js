@@ -125,7 +125,7 @@ function eventHandler() {
 
 			window.setTimeout(function (){
 				$('body').removeClass('loaded_hiding');
-			}, 50);
+			}, 100);
 		}, 1000);
 	});
 

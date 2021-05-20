@@ -12,21 +12,34 @@
 	//	--sPT: #{rem(99)};
 	//	--sPB: #{rem(36)};
 	//}
-	@include media-breakpoint-up(base){
+	@include media-breakpoint-up(xl){
 		--sPT: #{rem(0)};
 		--sPB: #{rem(0)};
 	}
 
-	&__row{}
-	&__container{
+	&__img-xl-container{
 		position: relative;
 		z-index: 1;
+	}
+	&__img{
+		&--xl{
+			top: 70px!important;
+			transform: none!important;
+		}
+	}
+
+	&__row{
+
+	}
+	&__container{
+		position: relative;
+		z-index: 3;
 
 		margin-bottom: 67px;
 		@include media-breakpoint-up(md){
 			margin-bottom: 73px;
 		}
-		@include media-breakpoint-up(base){
+		@include media-breakpoint-up(xl){
 			margin-bottom: 0;
 		}
 	}
@@ -194,18 +207,18 @@
 }
 
 .hb-sliders{
-	//@include media-breakpoint-up(xl){
-	//	transform: rotate(45deg) translateX(-350px) translateY(-300px);
-	//}
-	//@include media-breakpoint-up(xxl){
-	//	transform: rotate(45deg) translateX(-400px) translateY(-400px);
-	//}
-	@include media-breakpoint-up(base){
-		transform: rotate(45deg) translateX(-400px) translateY(-545px);
+	@include media-breakpoint-up(xl){
+		transform: rotate(45deg) translateX(-350px) translateY(-370px);
 		position: fixed;
-		z-index: 10;
+		z-index: 1;
 		top: 0;
 		left: 0;
+	}
+	@include media-breakpoint-up(xxl){
+		transform: rotate(45deg) translateX(-400px) translateY(-400px);
+	}
+	@include media-breakpoint-up(base){
+		transform: rotate(45deg) translateX(-400px) translateY(-545px);
 	}
 	@media (min-width: 1921px) {
 		transform: rotate(45deg) translateX(-30vw) translateY(-38vw);
