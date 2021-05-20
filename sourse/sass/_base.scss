@@ -511,6 +511,11 @@ body::after {
 	z-index: 2000;
 	height: 100%;
 	background-color: #FDFBF9;
+
+	background-image: url(../img/svg/big-logo.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200px;
 }
 body:after {
 	--s: 1s;
