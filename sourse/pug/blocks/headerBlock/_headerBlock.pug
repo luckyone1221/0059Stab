@@ -34,7 +34,7 @@ mixin headerBlock()
 							.col-md-6
 								+input('Ваш E-mail', 'email', undefined, 'email')
 							.col-md-6
-								+input('Введите номер телефона', 'tel', undefined, 'tel')
+								+input('Введите номер телефона', 'tel', undefined, 'tel')(required class='error')
 							.col-md-6
 								+input('Название компании или проекта', 'text', undefined, 'project-name')
 						+e.btn-cont
