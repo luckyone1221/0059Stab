@@ -7,7 +7,8 @@
 		padding: 42px 0;
 	}
 	@include media-breakpoint-up(xl){
-		padding: 80px 0;
+		//padding: 80px 0;
+		padding: 60px 0;
 	}
 
 	&__container{
@@ -56,12 +57,6 @@
 			color: $primary;
 		}
 
-		&:hover{
-			.icon{
-				color: $green2;
-			}
-		}
-
 		@include media-breakpoint-up(xl){
 			position: relative;
 			z-index: 3;
@@ -88,6 +83,9 @@
 	font-family: $mono;
 	line-height: (21/16);
 	color: $secondary;
+	&:hover{
+		color: $secondary;
+	}
 
 	text-decoration: none!important;
 }
@@ -96,6 +94,9 @@
 	font-weight: 700;
 	line-height: (21/16);
 	color: $dark;
+	&:hover{
+		color: $dark;
+	}
 }
 
 .telegram-ball{
