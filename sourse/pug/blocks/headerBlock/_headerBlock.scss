@@ -1,6 +1,9 @@
 // start .headerBlock
 .headerBlock {
-
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	--sTPB: #{rem(38)};
 	--sPT: #{rem(26)};
 	@include media-breakpoint-up(md){

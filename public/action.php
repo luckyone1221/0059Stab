@@ -10,7 +10,7 @@ $mail->Encoding = 'base64';
 $mail->CharSet = 'utf-8';
 
 ///who send 
-$mail->setFrom('info@info.com','info info');
+$mail->setFrom('info@info.com','info@workes.ru');
 
  $mail->addAddress('info@workes.ru');
  $mail->addAddress('arts.man@mail.ru');
@@ -20,7 +20,7 @@ $mail->setFrom('info@info.com','info info');
 
 
 //Субъект
-$mail->Subject = 'Заявка с сайта';
+$mail->Subject = 'Заявка с сайта workes.ru' ;
 
 $time = date('d.m.Y в H:i');
 $html = '
